@@ -1,5 +1,7 @@
 from netmiko import ConnectHandler
-import inquirer, json, sys
+import inquirer
+import json
+import sys
 
 print("Welcome to ScriptSwitch!\nSwitch the way you script.\n")
 
