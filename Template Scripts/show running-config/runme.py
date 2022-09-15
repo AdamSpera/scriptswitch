@@ -2,11 +2,11 @@ from netmiko import ConnectHandler
 from datetime import datetime
 
 # ENTER SWITCH IP ADDRESS BELOW
-ipOfSwitch = ''
+ipOfSwitch = '192.168.0.1'
 # ENTER SWITCH USERNAME BELOW
-usernameOfSwitch = ''
+usernameOfSwitch = 'cisco'
 # ENTER SWITCH PASSWORD BELOW
-passwordOfSwitch = ''
+passwordOfSwitch = 'password'
 
 # ENTER NAME OF FILE TO SAVE OUTPUT TO
 # LEAVE EMPTY TO NOT SAVE OUTPUT
@@ -21,7 +21,7 @@ cisco_881 = {
 
 net_connect = ConnectHandler(**cisco_881)
 
-output = net_connect.send_command('show int summary')
+output = net_connect.send_command('show running-config')
 
 print(output) 
 
