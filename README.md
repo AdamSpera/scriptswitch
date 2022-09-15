@@ -4,7 +4,7 @@ _Switching up ways to script._
 
 ## Introduction
 
-ScriptSwicth is a project developed by Adam Spera at Arcadia University, computer science department as an original independent study capstone. ScriptSwitch is a CLI script injection software for Cisco switches. 
+ScriptSwitch is a project developed by Adam Spera at Arcadia University, computer science department as an original independent study capstone. ScriptSwitch is a CLI script injection software for Cisco switches. 
 
 - Connect into Cisco switches securely using SSH
 - Select from a variety of template scripts
@@ -18,24 +18,23 @@ Utilizing the functionality of NetMiko and ConnectHandler over SSH, ScriptSwitch
 
 ### Establishing a SSH connection
 
-1. Run the following commands in a configured terminal for ScirptGUI:
+1. Run the following commands in a configured terminal for ScriptSwitch:
 ```
-conda activate cisco
 python ScriptGUI.py
 ```
-2. When promted, enter the target switch's IP address (no subnet)
-3. When promted, enter the intended user's SSH username
-4. When promted, enter the intended user's SSH password
+2. When prompted, enter the target switch's IP address (no subnet)
+3. When prompted, enter the intended user's SSH username
+4. When prompted, enter the intended user's SSH password
  
 5. Select one of the choices:
    - Create a new script
-   - use a template Script
+   - Use a template script
 
 ### New Script Mode
 
 1. When prompted, input the code to be deployed to the switch
 2. The program will display the switch output after the response
-3. When confirmation is recieved, select oen of the following options:
+3. When confirmation is received, select one of the following options:
    - Send another script
    - Exit the program 
 
@@ -43,13 +42,13 @@ python ScriptGUI.py
 
 1. When prompted, select any of the presented template scripts to deploy it
 2. The program will display the switch output after the response
-3. When confirmation is recieved, select oen of the following options:
+3. When confirmation is received, select one of the following options:
    - Send another script
    - Exit the program
 
 ### Output File
 
-The results are automatically saved to a file in teh root directory named Output.txt
+The results are automatically saved to a file in the root directory named Output.txt
 
 ## Installation 
 
