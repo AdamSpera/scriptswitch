@@ -49,7 +49,10 @@ def optionsMenu():
     if answers["initialChoice"] == "Create a new script":
         customCommand = input("Enter script commands: ")
         print("# SWITCH OUTPUT BELOW \/ ----------------------------------")
-        print(net_connect.send_command(customCommand))
+        output = net_connect.send_command(customCommand)
+        print(output)
+        with open('Output.txt', 'w') as f:
+            f.write(output)
         print("\n# SWITCH OUTPUT ABOVE /\\ ----------------------------------\n")
         restartOption()
 
@@ -64,7 +67,10 @@ def optionsMenu():
         ]
         answers = inquirer.prompt(questions)
         print("# SWITCH OUTPUT BELOW \/ ----------------------------------")
-        print(net_connect.send_command(answers["templateChoice"]))
+        output = net_connect.send_command(answers["templateChoice"])
+        print(output)
+        with open('Output.txt', 'w') as f:
+            f.write(output)
         print("\n# SWITCH OUTPUT ABOVE /\\ ----------------------------------\n")
         restartOption()
 
