@@ -14,5 +14,5 @@ Thank you to everybody who helped create the ScriptSwitch project possible!
 
 Special mention to the following people:
 
-- Testing and Quality: Brey Rivera
+- Quality Assurence: Brey Rivera
 - Guidance and Testing: Vitaly Ford
