@@ -1,6 +1,7 @@
 from netmiko import ConnectHandler
 from pprint import pprint
 import inquirer
+import json
 import sys
 
 print("Welcome to ScriptSwitch!\nSwitch the way you script.\n")
@@ -51,9 +52,11 @@ def optionsMenu():
         print("# SWITCH OUTPUT BELOW \/ ----------------------------------")
         output = net_connect.send_command(customCommand)
         print(output)
+        print("\n# SWITCH OUTPUT ABOVE /\\ ----------------------------------\n")
+
         with open('Output.txt', 'w') as f:
             f.write(output)
-        print("\n# SWITCH OUTPUT ABOVE /\\ ----------------------------------\n")
+
         restartOption()
 
     if answers["initialChoice"] == "Use a template script":
@@ -62,16 +65,43 @@ def optionsMenu():
                 "templateChoice",
                 message="Select a template script to use",
                 choices=["copy running-config startup-config", "show cdp neighbors", "show interface status",
-                         "show interface summary", "show interfaces switchport", "show mac address-table", "show running-config"],
+                         "show interface summary", "show interfaces switchport", "show mac address-table", "show running-config", "CONFIGURE AN INTERFACE"],
             ),
         ]
         answers = inquirer.prompt(questions)
-        print("# SWITCH OUTPUT BELOW \/ ----------------------------------")
-        output = net_connect.send_command(answers["templateChoice"])
-        print(output)
-        with open('Output.txt', 'w') as f:
-            f.write(output)
-        print("\n# SWITCH OUTPUT ABOVE /\\ ----------------------------------\n")
+
+        if answers["templateChoice"] != "CONFIGURE AN INTERFACE":
+            print("# SWITCH OUTPUT BELOW \/ ----------------------------------")
+            output = net_connect.send_command(answers["templateChoice"])
+            print(output)
+            print("\n# SWITCH OUTPUT ABOVE /\\ ----------------------------------\n")
+            with open('Output.txt', 'w') as f:
+                f.write(output)
+        else:
+            output = net_connect.send_command(
+                "show ip interface brief", use_textfsm=True)
+
+            optionsList = []
+            for i in output:
+                optionsList.append(i["intf"])
+            questions = [
+                inquirer.List(
+                    "templateChoice",
+                    message="Select an interface to configure",
+                    choices=optionsList,
+                ),
+            ]
+            interfaceAnswer = inquirer.prompt(questions)
+
+            questions = [
+                inquirer.List(
+                    "templateChoice",
+                    message="Select a configuration option for the interface",
+                    choices=["Configure as a trunk port", "Configure as an access port", "Set IP address", "Set port shutdown", "Set port no shutdown"],
+                ),
+            ]
+            interfaceAnswer = inquirer.prompt(questions)
+
         restartOption()
 
 
