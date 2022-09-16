@@ -9,6 +9,7 @@ ScriptSwitch is a project developed by Adam Spera at Arcadia University, compute
 - Connect into Cisco switches securely using SSH
 - Select from a variety of template scripts
 - Craft custom scripts in the CLI for deployment
+- Configure port interfaces with template scirpts
 - Ease of use through any Anaconda PowerShell terminal
 - Save output with formatting to an external file
 
@@ -29,6 +30,7 @@ python ScriptGUI.py
 5. Select one of the choices:
    - Create a new script
    - Use a template script
+   - Configure an interface
 
 ### New Script Mode
 
@@ -45,6 +47,15 @@ python ScriptGUI.py
 3. When confirmation is received, select one of the following options:
    - Send another script
    - Exit the program
+   
+### Configure Interface Mode
+
+1. When prompted, select an interface from the list of front facing ports
+2. Select a script template you want to send (this will use the secret key for enable and configure terminal)
+   - Some of the templates will request further information like ip addresses or subnets
+3. When confirmation is received, select one of the following options:
+   - Send another script!
+   - Exit the program.
 
 ### Output File
 
