@@ -124,7 +124,7 @@ def optionsMenu():
         if (configureAnswer["templateChoice"] == "Set port no shutdown"):
             net_connect.config_mode()
             net_connect.send_config_set(
-                ["interface " + interfaceAnswer["templateChoice"], "shutdown", "exit"])
+                ["interface " + interfaceAnswer["templateChoice"], "no shutdown", "exit"])
             print("# Successful configuration! #\n")
             restartOption()
 
