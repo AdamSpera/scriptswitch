@@ -8,6 +8,8 @@ print("Welcome to ScriptSwitch!\nSwitch the way you script.\n")
 ipOfSwitch = input("Enter target switch ip address: ")
 usernameOfSwitch = input("Enter target switch username: ")
 passwordOfSwitch = input("Enter target switch password: ")
+secretPasswordOfSwitch = input(
+    "Enter target switch secret password (enable & configure terminal): ")
 
 print("\nConnecting to switch...")
 
@@ -15,9 +17,11 @@ cisco_881 = {
     'device_type': 'cisco_ios',
     'host':   ipOfSwitch,
     'username': usernameOfSwitch,
-    'password': passwordOfSwitch
+    'password': passwordOfSwitch,
+    "secret": secretPasswordOfSwitch,
 }
 net_connect = ConnectHandler(**cisco_881)
+net_connect.enable()
 print("Connection established!\n")
 
 
@@ -80,13 +84,49 @@ def optionsMenu():
             inquirer.List(
                 "templateChoice",
                 message="Select a configuration action for the interface",
-                choices=["Set as trunk port", "Set as access port",
-                         "Set IP address", "Set port shutdown", "Set port no shutdown"],
+                choices=["Set as access port", "Set IP address", "Set no IP address",
+                         "Set port shutdown", "Set port no shutdown"],
             ),
         ]
         configureAnswer = inquirer.prompt(questions)
 
-        # Add configure port functionality here
+        if (configureAnswer["templateChoice"] == "Set as access port"):
+            vlanNumber = input("Enter VLAN number: ")
+            net_connect.config_mode()
+            net_connect.send_config_set(
+                ["interface " + interfaceAnswer["templateChoice"], "switchport mode access", "switchport access vlan " + vlanNumber, "exit"])
+            print("# Successful configuration! #\n")
+            restartOption()
+
+        if (configureAnswer["templateChoice"] == "Set IP address"):
+            ipNumber = input("Enter IP address: ")
+            subnetNumber = input("Enter subnet: ")
+            net_connect.config_mode()
+            net_connect.send_config_set(
+                ["interface " + interfaceAnswer["templateChoice"], "ip address " + ipNumber + "" + subnetNumber, "exit"])
+            print("# Successful configuration! #\n")
+            restartOption()
+
+        if (configureAnswer["templateChoice"] == "Set no IP address"):
+            net_connect.config_mode()
+            net_connect.send_config_set(
+                ["interface " + interfaceAnswer["templateChoice"], "no ip address", "exit"])
+            print("# Successful configuration! #\n")
+            restartOption()
+
+        if (configureAnswer["templateChoice"] == "Set port shutdown"):
+            net_connect.config_mode()
+            net_connect.send_config_set(
+                ["interface " + interfaceAnswer["templateChoice"], "shutdown", "exit"])
+            print("# Successful configuration! #\n")
+            restartOption()
+
+        if (configureAnswer["templateChoice"] == "Set port no shutdown"):
+            net_connect.config_mode()
+            net_connect.send_config_set(
+                ["interface " + interfaceAnswer["templateChoice"], "shutdown", "exit"])
+            print("# Successful configuration! #\n")
+            restartOption()
 
         restartOption()
 
@@ -95,8 +135,8 @@ def optionsMenu():
             inquirer.List(
                 "templateChoice",
                 message="Select a template script to use",
-                choices=["copy running-config startup-config", "show cdp neighbors", "show interface status",
-                         "show interface summary", "show interfaces switchport", "show mac address-table", "show running-config"],
+                choices=["copy running-config startup-config", "show cdp neighbors", "show interface status", "show interface summary",
+                         "show interfaces switchport", "show ip interface", "show ip dhcp client interface", "show mac address-table", "show running-config"],
             ),
         ]
         answers = inquirer.prompt(questions)
