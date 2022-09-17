@@ -68,6 +68,8 @@ The results are automatically saved to a file in the root directory named Output
 
 If you already have Anaconda and Git installed you can use the **EasyInstall.bat** file! 
 
+~ **Download the ```EasyInstall.bat``` file at https://adamspera.dev/scriptswitch** ~
+
 The program file will be saved to the user desktop.
 
 Just open an Anaconda PowerShell Terminal in the scriptswitch folder and type the following to start the program:
