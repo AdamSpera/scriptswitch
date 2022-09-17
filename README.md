@@ -81,7 +81,7 @@ export NET_TEXTFSM="C:\…….\scriptswitch\ntc-templates\ntc_templates\template
 ### Anaconda Enviorment and Libraries
 
 1. Open an Anaconda PowerShell terminal and enter: ```conda create —name cisco python=3.9```
-2. Enter the new enviorment by entering: ```conda actiavte cisco```
+2. Enter the new enviorment by entering: ```conda activate cisco```
 3. Install the following libraries:
 ```
 pip install netmiko
@@ -97,3 +97,5 @@ Special mention and thanks to the following people:
 
 - Guidance and Mentoring: Vitaly Ford
 - Testing Equipment: Bobby Connel
+
+_Made by: Adam T Spera_
