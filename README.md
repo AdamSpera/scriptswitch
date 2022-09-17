@@ -19,7 +19,7 @@ Utilizing the functionality of NetMiko and ConnectHandler over SSH, ScriptSwitch
 
 ### Establishing a SSH connection
 
-1. Run the following commands in a configured terminal for ScriptSwitch:
+1. Run the following commands in an Anaconda PowerShell (in Cisco env: ```conda activate cisco```) for ScriptSwitch:
 ```
 python ScriptGUI.py
 ```
@@ -63,6 +63,32 @@ The results are automatically saved to a file in the root directory named Output
 
 ## Installation 
 
+### Git and Cloning
+
+1. Clone ScriptSwitch to your desired directory and folder.
+   - The MSI installer for Git can be found at https://git-scm.com/download/win
+2. Clone NTC-Templates inside the scriptswitch directory folder.
+   - Clone NTC-Templates from https://github.com/networktocode/ntc-templates.git 
+   
+### Git Bash Variables
+
+1. Open a Git Bash terminal in the scirptswitch directory and enter the following line of code:
+```
+export NET_TEXTFSM="C:\…….\scriptswitch\ntc-templates\ntc_templates\templates”
+```
+2. Test that the command was successful by entering the following code: ```echo $NET_TEXTFSM```
+  
+### Anaconda Enviorment and Libraries
+
+1. Open an Anaconda PowerShell terminal and enter: ```conda create —name cisco python=3.9```
+2. Enter the new enviorment by entering: ```conda activate cisco```
+3. Install the following libraries:
+```
+pip install netmiko
+pip install ntc_templates
+pip install inquirer
+```
+
 ## Contributions
 
 Thank you to everybody who helped create the ScriptSwitch project possible!
@@ -71,3 +97,5 @@ Special mention and thanks to the following people:
 
 - Guidance and Mentoring: Vitaly Ford
 - Testing Equipment: Bobby Connel
+
+_Made by: Adam T Spera_
