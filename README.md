@@ -19,8 +19,9 @@ Utilizing the functionality of NetMiko and ConnectHandler over SSH, ScriptSwitch
 
 ### Establishing a SSH connection
 
-1. Run the following commands in an Anaconda PowerShell (in Cisco env: ```conda activate cisco```) for ScriptSwitch:
+1. To start the program, enter the switchscript folder in an Anaconda PowerShell Terminal, and enter the following:
 ```
+conda activate cisco
 python ScriptGUI.py
 ```
 2. When prompted, enter the target switch's IP address (no subnet)
@@ -63,22 +64,37 @@ The results are automatically saved to a file in the root directory named Output
 
 ## Installation 
 
-### Git and Cloning
+### Easy Install (Recommended)
+
+If you already have Anaconda and Git installed you can use the **EasyInstall.bat** file! 
+
+The program file will be saved to the user desktop.
+
+Just open an Anaconda PowerShell Terminal in the scriptswitch folder and type the following to start the program:
+
+```
+conda activate cisco
+python ScriptGUI.py
+```
+
+### Manual Installation
+
+#### Git and Cloning
 
 1. Clone ScriptSwitch to your desired directory and folder.
    - The MSI installer for Git can be found at https://git-scm.com/download/win
 2. Clone NTC-Templates inside the scriptswitch directory folder.
    - Clone NTC-Templates from https://github.com/networktocode/ntc-templates.git 
    
-### Git Bash Variables
+#### Git Bash Variables
 
 1. Open a Git Bash terminal in the scirptswitch directory and enter the following line of code:
 ```
-export NET_TEXTFSM="C:\…….\scriptswitch\ntc-templates\ntc_templates\templates”
+export NET_TEXTFSM="C:\……\scriptswitch\ntc-templates\ntc_templates\templates”
 ```
 2. Test that the command was successful by entering the following code: ```echo $NET_TEXTFSM```
   
-### Anaconda Enviorment and Libraries
+#### Anaconda Enviorment and Libraries
 
 1. Open an Anaconda PowerShell terminal and enter: ```conda create —name cisco python=3.9```
 2. Enter the new enviorment by entering: ```conda activate cisco```
