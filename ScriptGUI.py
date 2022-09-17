@@ -95,7 +95,7 @@ def optionsMenu():
             net_connect.config_mode()
             net_connect.send_config_set(
                 ["interface " + interfaceAnswer["templateChoice"], "switchport mode access", "switchport access vlan " + vlanNumber, "exit"])
-            print("# Successful configuration! #\n")
+            print("\n# Successful configuration! #\n")
             restartOption()
 
         if (configureAnswer["templateChoice"] == "Set IP address"):
@@ -104,28 +104,28 @@ def optionsMenu():
             net_connect.config_mode()
             net_connect.send_config_set(
                 ["interface " + interfaceAnswer["templateChoice"], "ip address " + ipNumber + "" + subnetNumber, "exit"])
-            print("# Successful configuration! #\n")
+            print("\n# Successful configuration! #\n")
             restartOption()
 
         if (configureAnswer["templateChoice"] == "Set no IP address"):
             net_connect.config_mode()
             net_connect.send_config_set(
                 ["interface " + interfaceAnswer["templateChoice"], "no ip address", "exit"])
-            print("# Successful configuration! #\n")
+            print("\n# Successful configuration! #\n")
             restartOption()
 
         if (configureAnswer["templateChoice"] == "Set port shutdown"):
             net_connect.config_mode()
             net_connect.send_config_set(
                 ["interface " + interfaceAnswer["templateChoice"], "shutdown", "exit"])
-            print("# Successful configuration! #\n")
+            print("\n# Successful configuration! #\n")
             restartOption()
 
         if (configureAnswer["templateChoice"] == "Set port no shutdown"):
             net_connect.config_mode()
             net_connect.send_config_set(
                 ["interface " + interfaceAnswer["templateChoice"], "no shutdown", "exit"])
-            print("# Successful configuration! #\n")
+            print("\n# Successful configuration! #\n")
             restartOption()
 
         restartOption()
