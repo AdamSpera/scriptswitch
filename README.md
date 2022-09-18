@@ -70,7 +70,7 @@ If you already have Anaconda and Git installed you can use the **EasyInstall.bat
 
 ~ **Download the ```EasyInstall.bat``` file at https://adamspera.dev/scriptswitch** ~
 
-Make sure to run the bat file as administrator to make the Anaconda enviorment. _**You will have to run the file twice**_. The program file will be saved to the user desktop.
+Make sure to run the bat file as administrator to make the Anaconda enviorment. _**You will have to run the file twice**_. The program file will be saved to the user desktop or at the same directory the bat file is ran from.
 
 Just open an Anaconda PowerShell Terminal in the scriptswitch folder and type the following to start the program:
 
