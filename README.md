@@ -65,7 +65,7 @@ The results are automatically saved to a file in the root directory named Output
 
 ### Easy Install (Recommended)
 
-If you already have Git and Python installed you can use the **EasyInstall.bat** file! 
+If you already have Git, Pip, and Python installed you can use the **EasyInstall.bat** file! 
 
 ~ **Download the ```EasyInstall.bat``` file at https://adamspera.dev/scriptswitch** ~
 
