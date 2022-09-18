@@ -114,6 +114,6 @@ Thank you to everybody who helped create the ScriptSwitch project possible!
 Special mention and thanks to the following people:
 
 - Guidance and Mentoring: Vitaly Ford
-- Testing Equipment: Bobby Connel
+- Testing Equipment: Bobby Connell
 
 _Made by: Adam T Spera_
