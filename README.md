@@ -65,11 +65,13 @@ The results are automatically saved to a file in the root directory named Output
 
 ### Easy Install (Recommended)
 
-If you already have Anaconda and Git installed you can use the **EasyInstall.bat** file! 
+If you already have Anaconda, Git, and Python installed you can use the **EasyInstall.bat** file! 
 
 ~ **Download the ```EasyInstall.bat``` file at https://adamspera.dev/scriptswitch** ~
 
-The program file will be saved to the user desktop or at the same directory the bat file is ran from. If teh folder does not appear, run teh file again.
+Recommended: Unzip the folder to the desktop, and run it from there.
+
+The program folder will be saved to the user desktop or at the same directory the bat file is ran from. If the folder does not appear, run the file again. 
 
 ### Manual Installation
 
@@ -90,9 +92,7 @@ export NET_TEXTFSM="C:\……\scriptswitch\ntc-templates\ntc_templates\templates
   
 #### Anaconda Enviorment and Libraries
 
-1. Open an Anaconda PowerShell terminal and enter: ```conda create —name cisco python=3.9```
-2. Enter the new enviorment by entering: ```conda activate cisco```
-3. Install the following libraries:
+1. Open an Anaconda PowerShell terminal or normal terminal and enter the following in the scriptswitch folder:
 ```
 pip install netmiko
 pip install ntc_templates
