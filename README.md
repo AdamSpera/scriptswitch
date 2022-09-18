@@ -17,18 +17,17 @@ Utilizing the functionality of NetMiko and ConnectHandler over SSH, ScriptSwitch
 
 ## Usage
 
+### Running the program
+
+- To start the program, run the **LaunchProgram.bat** file
+
 ### Establishing a SSH connection
 
-1. To start the program, enter the switchscript folder in an Anaconda PowerShell Terminal, and enter the following:
-```
-conda activate cisco
-python ScriptGUI.py
-```
-2. When prompted, enter the target switch's IP address (no subnet)
-3. When prompted, enter the intended user's SSH username
-4. When prompted, enter the intended user's SSH password
+1. When prompted, enter the target switch's IP address (no subnet)
+2. When prompted, enter the intended user's SSH username
+3. When prompted, enter the intended user's SSH password
  
-5. Select one of the choices:
+4. Select one of the choices:
    - Create a new script
    - Use a template script
    - Configure an interface
@@ -70,14 +69,7 @@ If you already have Anaconda and Git installed you can use the **EasyInstall.bat
 
 ~ **Download the ```EasyInstall.bat``` file at https://adamspera.dev/scriptswitch** ~
 
-Make sure to run the bat file as administrator to make the Anaconda enviorment. _**You will have to run the file twice**_. The program file will be saved to the user desktop or at the same directory the bat file is ran from.
-
-Just open an Anaconda PowerShell Terminal in the scriptswitch folder and type the following to start the program:
-
-```
-conda activate cisco
-python ScriptGUI.py
-```
+The program file will be saved to the user desktop or at the same directory the bat file is ran from. If teh folder does not appear, run teh file again.
 
 ### Manual Installation
 
