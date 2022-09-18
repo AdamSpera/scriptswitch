@@ -65,7 +65,7 @@ The results are automatically saved to a file in the root directory named Output
 
 ### Easy Install (Recommended)
 
-If you already have Anaconda, Git, and Python installed you can use the **EasyInstall.bat** file! 
+If you already have Git and Python installed you can use the **EasyInstall.bat** file! 
 
 ~ **Download the ```EasyInstall.bat``` file at https://adamspera.dev/scriptswitch** ~
 
@@ -90,9 +90,9 @@ export NET_TEXTFSM="C:\……\scriptswitch\ntc-templates\ntc_templates\templates
 ```
 2. Test that the command was successful by entering the following code: ```echo $NET_TEXTFSM```
   
-#### Anaconda Enviorment and Libraries
+#### Downloading Libraries
 
-1. Open an Anaconda PowerShell terminal or normal terminal and enter the following in the scriptswitch folder:
+1. Open teh command line and enter the following in the scriptswitch folder:
 ```
 pip install netmiko
 pip install ntc_templates
