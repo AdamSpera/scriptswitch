@@ -2,8 +2,6 @@ START cd %userprofile%
 git clone https://github.com/AdamSpera/scriptswitch.git
 cd scriptswitch
 git clone https://github.com/networktocode/ntc-templates.git
-conda create —name cisco python=3.9
-conda activate cisco
 pip install netmiko
 pip install ntc_templates
 pip install inquirer
